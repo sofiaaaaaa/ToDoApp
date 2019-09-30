@@ -50,7 +50,6 @@ public class LoginController {
 
     @FXML
     void initialize(){
-
         dbHandler = new DBHandler();
 
         loginPassword.setOnKeyPressed( event -> {
@@ -89,6 +88,10 @@ public class LoginController {
         String loginText = loginUserName.getText().trim();
         String loginPwd = loginPassword.getText().trim();
 
+        if( loginText.isEmpty() || loginPwd.isEmpty() ){
+            shakeLoginFields();
+            return;
+        }
         User user = new User();
         user.setUserName(loginText);
         user.setPassword(loginPwd);
@@ -101,21 +104,24 @@ public class LoginController {
                 counter++;
                 String name = userRow.getString("firstname");
                 setUserId(userRow.getInt("userid"));
-                System.out.println("WelCome "+name);
             }
 
             if(counter == 1){
                 showAddItemScreen();
             } else {
-                Shaker shaker = new Shaker(loginUserName);
-                Shaker shaker2 = new Shaker(loginPassword);
-                shaker.shake();
-                shaker2.shake();
+                shakeLoginFields();
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private void shakeLoginFields(){
+        Shaker shaker = new Shaker(loginUserName);
+        Shaker shaker2 = new Shaker(loginPassword);
+        shaker.shake();
+        shaker2.shake();
     }
 
     private void showAddItemScreen() {

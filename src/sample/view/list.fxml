@@ -28,6 +28,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <JFXButton fx:id="logoutButton" layoutX="14.0" layoutY="11.0" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: black;" text="Logout" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="13.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <JFXListView fx:id="listTask" layoutX="286.0" layoutY="60.0" prefHeight="330.0" prefWidth="400.0">

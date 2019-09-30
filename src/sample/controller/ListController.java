@@ -6,13 +6,18 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import sample.Database.DBHandler;
 import sample.animation.Roller;
 import sample.animation.Shaker;
 import sample.model.Task;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -42,6 +47,9 @@ public class ListController {
 
     @FXML
     private ImageView refreshButton;
+
+    @FXML
+    private JFXButton logoutButton;
 
     @FXML
     private Label TitleLabel;
@@ -79,6 +87,11 @@ public class ListController {
                 taskField.setText(selectedTask.getTask());
                 descriptionField.setText(selectedTask.getDescription());
             }
+        });
+
+        // Click Logout Button
+        logoutButton.setOnAction(event -> {
+            logout(logoutButton);
         });
 
     }
@@ -163,7 +176,22 @@ public class ListController {
         myNewTask.setUserId(LoginController.userId);
         dbHandler.insertTask(myNewTask);
 
-
     }
 
+    public void logout(JFXButton btn){
+        btn.getScene().getWindow().hide();
+        LoginController.setUserId(0);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/sample/view/login.fxml"));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }
