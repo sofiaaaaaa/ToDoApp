@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootAnchorPane" prefHeight="90.0" prefWidth="350.0" style="-fx-background-color: #5d635f;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="iconImageView" fitHeight="38.0" fitWidth="38.0" layoutX="4.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/tasks.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="TaskLabel" layoutX="49.0" layoutY="5.0" prefHeight="14.0" prefWidth="268.0" text="Task" textFill="#d5d5d5">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="descriptionLabel" layoutX="44.0" layoutY="32.0" prefHeight="26.0" prefWidth="293.0" style="-fx-background-color: #fff;" text="Description" textFill="#3a4949" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font name="Comic Sans MS" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateLabel" layoutX="236.0" layoutY="61.0" prefHeight="22.0" prefWidth="167.0" text="Date Created" textFill="#c0ddc7" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font name="Comic Sans MS" size="10.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="deleteButton" fitHeight="20.0" fitWidth="20.0" layoutX="317.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0">
+         <image>
+            <Image url="@../assets/trashcan.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

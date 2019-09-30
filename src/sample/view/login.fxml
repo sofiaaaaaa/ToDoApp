@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
+   <children>
+      <AnchorPane layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="700.0" style="-fx-background-color: #fff;">
+         <children>
+            <JFXTextField fx:id="loginUserName" focusColor="WHITE" layoutX="43.0" layoutY="60.0" prefHeight="59.0" prefWidth="225.0" promptText="User Name" unFocusColor="RED">
+               <font>
+                  <Font name="Han Santteut Dotum Regular" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="loginPassword" focusColor="WHITE" layoutX="43.0" layoutY="142.0" prefHeight="59.0" prefWidth="226.0" promptText="Password" unFocusColor="RED">
+               <font>
+                  <Font name="Leelawadee" size="18.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton fx:id="loginButton" layoutX="310.0" layoutY="9.0" prefHeight="282.0" prefWidth="375.0" style="-fx-background-color: Black;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label layoutX="274.0" layoutY="24.0" prefHeight="21.0" prefWidth="151.0" text="2DO" textFill="WHITE">
+         <font>
+            <Font name="Harrington" size="48.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="loginSignupButton" layoutX="482.0" layoutY="24.0" prefHeight="59.0" prefWidth="186.0" style="-fx-background-color: Black;" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

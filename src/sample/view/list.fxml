@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ListController">
+   <children>
+      <AnchorPane prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: gray;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="TitleLabel" layoutX="220.0" layoutY="10.0" prefHeight="30.0" prefWidth="312.0" text="My 2DO's" textFill="WHITE" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="168.0">
+               <font>
+                  <Font name="Script MT Bold" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="refreshButton" fitHeight="24.0" fitWidth="24.0" layoutX="653.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/refresh.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <JFXListView fx:id="listTask" layoutX="286.0" layoutY="60.0" prefHeight="330.0" prefWidth="400.0">
+         <effect>
+            <DropShadow color="#cdcdcd" />
+         </effect></JFXListView>
+      <JFXTextField fx:id="taskField" focusColor="RED" layoutX="22.0" layoutY="74.0" prefHeight="40.0" prefWidth="250.0" promptText="Task" unFocusColor="#8fb9ed">
+         <font>
+            <Font name="Bodoni MT" size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="descriptionField" focusColor="RED" layoutX="22.0" layoutY="147.0" prefHeight="40.0" prefWidth="250.0" promptText="Description" unFocusColor="#9fccdd">
+         <font>
+            <Font name="Bodoni MT" size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="saveTaskButton" layoutX="44.0" layoutY="215.0" prefHeight="153.0" prefWidth="206.0" style="-fx-background-color: red;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
